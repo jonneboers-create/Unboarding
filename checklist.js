@@ -1,3 +1,34 @@
+/* Keuzelijsten voor het formulier "Medewerker toevoegen".
+   Regels toevoegen of weghalen mag; let op de aanhalingstekens en de komma's. */
+var FUNCTIES = [
+  "Junior accountmanager",
+  "Senior accountmanager",
+  "Accountmanager retail",
+  "Verkoop medewerker",
+  "Verkoop binnendienst",
+  "Inkoop",
+  "Imports",
+  "Productiemedewerker",
+  "Kwaliteitsmedewerker",
+  "Expeditie medewerker",
+  "Expeditie leidinggevende",
+  "Chauffeur",
+  "Administratie medewerker",
+  "Marketing medewerker",
+  "Stagiair"
+];
+
+var AFDELINGEN = [
+  "Verkoop",
+  "Inkoop",
+  "Kwaliteit",
+  "Expeditie",
+  "Transport",
+  "Douane/imports",
+  "Administratie",
+  "Marketing"
+];
+
 /* Standaardchecklist. Pas dit bestand aan om de fases en taken te wijzigen.
    dag = aantal dagen na de startdatum; negatief is voor de startdatum. */
 var DEFAULT_STATE = {

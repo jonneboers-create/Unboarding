@@ -160,13 +160,20 @@ function renderDetail(h){
 }
 
 /* ---------- dialog ---------- */
+function select(name,list,current){
+  var opts=list.slice();
+  if(current&&opts.indexOf(current)<0)opts.push(current);
+  return '<select name="'+name+'"><option value="">Kies…</option>'+opts.map(function(o){
+    return '<option'+(o===current?' selected':'')+'>'+esc(o)+'</option>';
+  }).join('')+'</select>';
+}
 function openForm(h){
   var d=document.createElement('dialog');
   var v=h||{naam:'',functie:'',afdeling:'',start:iso(addDays(today(),14)),leidinggevende:''};
   d.innerHTML='<form class="dlg" method="dialog"><h3>'+(h?'Gegevens wijzigen':'Medewerker toevoegen')+'</h3><div class="fgrid">'+
     '<label class="full">Naam<input name="naam" required value="'+esc(v.naam)+'"></label>'+
-    '<label>Functie<input name="functie" value="'+esc(v.functie)+'"></label>'+
-    '<label>Afdeling<input name="afdeling" value="'+esc(v.afdeling)+'"></label>'+
+    '<label>Functie'+select('functie',FUNCTIES,v.functie)+'</label>'+
+    '<label>Afdeling'+select('afdeling',AFDELINGEN,v.afdeling)+'</label>'+
     '<label>Startdatum<input name="start" type="date" required value="'+esc(v.start)+'"></label>'+
     '<label class="full">Leidinggevende<input name="leidinggevende" value="'+esc(v.leidinggevende)+'"></label>'+
     '</div><div class="err" id="ferr"></div><div class="dlg-act"><button type="button" class="btn" value="cancel" id="fcancel">Annuleren</button><button class="btn primary" id="fok">'+(h?'Wijzigingen opslaan':'Toevoegen')+'</button></div></form>';
