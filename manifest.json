@@ -1,0 +1,17 @@
+{
+  "name": "Onboarding nieuwe medewerkers",
+  "short_name": "Onboarding",
+  "description": "Checklist en voortgang van de onboarding van nieuwe medewerkers.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#EEF1EC",
+  "theme_color": "#1F3A2E",
+  "lang": "nl",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

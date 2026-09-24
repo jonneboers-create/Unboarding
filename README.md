@@ -17,6 +17,9 @@ Pages kunt zetten.
 | `app.js` | De logica: opslaan, datums uitrekenen, schermen tekenen. |
 | `docs/onboarding-sjabloon-onenote.docx` | Dezelfde checklist als Word-sjabloon om in OneNote te plakken. |
 | `HANDLEIDING.md` | Uitleg voor de gebruikers: HR, IT en leidinggevenden. |
+| `manifest.json` | Naam, kleuren en iconen, zodat de site als app te installeren is. |
+| `sw.js` | Service worker: laat de app ook zonder internet openen. |
+| `icons/` | De app-iconen. |
 | `.nojekyll` | Zegt tegen GitHub Pages dat het de bestanden niet hoeft te verwerken. |
 
 ## Lokaal bekijken
@@ -55,6 +58,22 @@ git push
 ```
 
 Binnen een minuut staat de nieuwe versie online.
+
+## Als app installeren
+
+De site is een PWA: je kunt hem op je telefoon of computer installeren, waarna hij een eigen icoon
+en venster krijgt, zonder adresbalk.
+
+- **iPhone en iPad:** open de link in Safari, tik op het deelicoon en kies *Zet op beginscherm*.
+- **Android:** open de link in Chrome, tik op de drie puntjes en kies *App installeren*.
+- **Windows en Mac:** open de link in Chrome of Edge en klik op het installatie-icoon in de
+  adresbalk.
+
+Na installatie werkt het dashboard ook zonder internet.
+
+**Belangrijk bij updates:** verhoog het versienummer bovenin `sw.js` (`onboarding-v1` wordt
+`onboarding-v2`) telkens als je `index.html`, `app.js`, `checklist.js` of `styles.css` wijzigt.
+Anders blijven geïnstalleerde apps de oude versie tonen.
 
 ## De checklist aanpassen
 
